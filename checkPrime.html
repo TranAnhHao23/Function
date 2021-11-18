@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Checking</title>
+</head>
+<body>
+
+</body>
+<script>
+    function checkPrime(num){
+        for (let i = 2; i < num-1; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    for (let i = 2; i < 1000; i++) {
+        if (checkPrime(i) == true){
+            document.write(i + "&ensp;")
+        }
+    }
+
+
+</script>
+</html>
