@@ -5,35 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-
+<input type="number" id="inputHere" oninput="plusOne()">
+<p id="result"></p>
 </body>
 <script>
-    let num = 1;
-    let boo = true;
-    let str = "Hào đẹp zai vl";
-    let a = null;
-    let arr = [num, boo]
 
-    function doiSo(num, boo) {
-        num = 100;
-        str = "false";
-        return (num + str)
-    }
-    function doiArr(arr){
-        num = 10;
-        boo = false;
-        return arr;
+    function plusOne() {
+        let num = +document.getElementById("inputHere").value
+        return num + 1
     }
 
-    //hello người anh em
-    let b = doiSo(num,boo);
-    console.log(b);
-    console.log(num);
-    console.log(boo);
-    doiArr(arr);
-    console.log(arr);
-
-
-
+    console.log(plusOne())
+    document.getElementById("result").innerHTML = plusOne();
 </script>
 </html>
