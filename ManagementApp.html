@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Managament App</title>
+</head>
+<body>
+<h2>Add new project</h2>
+<p>
+    <input type="text" id="product" placeholder="New Product"> &nbsp;
+    <input type="button" id="add" value="Add" onclick="addItem()">
+</p>
+<p>
+    <input type="text" id="editProduct" placeholder="Change name"> &nbsp;
+    <input type="button" id="editTotal" value="Edit" onclick="editTotal()">
+</p>
+<hr>
+<p id="result"></p>
+</body>
+<script>
+    let arr = [];
+    let index = 0;
+    function addItem() {
+        let input = document.getElementById("product").value;
+        arr.push(input);
+        let data = "";
+        for (let i = 0; i < arr.length; i++) {
+            data += "<label for='editProduct'> <input type='button' value='Edit' onclick='editItem(" + i + ")' > </label>" +
+                "&emsp;" + "<input type='button' value='Delete' onclick='deleteItem(" + i + ")'>" + "&emsp;" + arr[i] + "<br><br>"
+        }
+        document.getElementById("result").innerHTML = data
+        document.getElementById("product").value = ''
+    }
+
+    function deleteItem(i) {
+        arr.splice(i, 1)
+        data = ''
+        for (let j = 0; j < arr.length; j++) {
+            data += "<label for='editProduct'> <input type='button' value='Edit' onclick='editItem(" + j + ")' > </label>" +
+                "&emsp;" + "<input type='button' value='Delete' onclick='deleteItem(" + j + ")'>" + "&emsp;" + arr[j] + "<br><br>"
+        }
+        document.getElementById("result").innerHTML = data
+    }
+
+    // function editItem(i){
+    //     let editName = document.getElementById("editProduct").value
+    //     arr[i] = editName
+    //     data = ''
+    //     for (let j = 0; j < arr.length; j++) {
+    //         data += "<label for='editProduct'> <input type='button' value='Edit' onclick='editItem(" + j + ")' > </label>" +
+    //             "&emsp;" + "<input type='button' value='Delete' onclick='deleteItem(" + j + ")'>" + "&emsp;" + arr[j] + "<br><br>"
+    //     }
+    //     document.getElementById("result").innerHTML = data
+    //
+    // }
+    function editItem(i) {
+        document.getElementById("editProduct").value = arr[i]
+        index = i
+    }
+
+    function editTotal() {
+        arr[index] = document.getElementById("editProduct").value
+        data = ''
+        for (let j = 0; j < arr.length; j++) {
+            data += "<label for='editProduct'> <input type='button' value='Edit' onclick='editItem(" + j + ")' > </label>" +
+                "&emsp;" + "<input type='button' value='Delete' onclick='deleteItem(" + j + ")'>" + "&emsp;" + arr[j] + "<br><br>"
+        }
+        document.getElementById("result").innerHTML = data
+    }
+
+</script>
+</html>

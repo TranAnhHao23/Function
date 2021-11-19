@@ -5,17 +5,41 @@
     <title>Title</title>
 </head>
 <body>
-<input type="number" id="inputHere" oninput="plusOne()">
-<p id="result"></p>
+<h4>Bài tập về nhà nè</h4>
+<label for="bamVaoDay"></label><input type="text" id="nhapVaoDay"></label>
+<input type="button" id="bamVaoDay" value="Hello">
 </body>
 <script>
+    // let arr = new Array(5);
+    // let count = 0;
+    // for (let i = 0; i < arr.length; i++) {
+    //     arr[i] = +prompt("Phan tu thu " + (i + 1))
+    //     if (isPrime(arr[i]) == false) {
+    //         alert("Nhap lai di");
+    //         i--;
+    //         count++;
+    //         if (count > 2) {
+    //             arr = [];
+    //             break;
+    //         }
+    //     }
+    // }
+    // console.log(arr)
+    // document.write(arr.join())
+    //
+    // function isPrime(num) {
+    //     for (let i = 2; i < num - 1; i++) {
+    //         if (num % i == 0) {
+    //             return false;
+    //             break;
+    //         }
+    //     }
+    //     return true;
+    // }
 
-    function plusOne() {
-        let num = +document.getElementById("inputHere").value
-        return num + 1
-    }
 
-    console.log(plusOne())
-    document.getElementById("result").innerHTML = plusOne();
+
+
+
 </script>
 </html>
